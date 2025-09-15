@@ -6,7 +6,7 @@ export default class Funcionario {
     public telefone: string
     public endereco: string
     public usuario: string
-    public senha: string
+    private senha: string
     public nivelPermissao: NivelPermissao
     
     constructor(id: string, nome: string, telefone: string, endereco: string, usuario: string, senha: string, nivelPermissao: NivelPermissao) {
