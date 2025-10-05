@@ -1,42 +1,49 @@
 import { TipoAeronave } from "../enum/TipoAeronave"
+import { IAeronave } from "../interface/IAeronave"
+import { IEtapa } from "../interface/IEtapa"
+import { IPeca } from "../interface/IPeca"
+import { ITeste } from "../interface/ITeste"
 
-export default class Aeronave {
-    private codigo: string
-    private modelo: string
-    private tipo: TipoAeronave
-    private capacidade: number
-    private alcance: number
+export default class Aeronave implements IAeronave {
+    private _codigo: string
+    private _modelo: string
+    private _tipo: TipoAeronave
+    private _capacidade: number
+    private _alcance: number
+
+    public pecas: IPeca[] = []
+    public etapas: IEtapa[] = []
+    public testes: ITeste[] = []
     
     constructor(codigo: string, modelo: string, tipo: TipoAeronave, capacidade: number, alcance:number) {
-        this.codigo = codigo
-        this.modelo = modelo
-        this.tipo = tipo
-        this.capacidade = capacidade
-        this.alcance = alcance
-    }
-    
-
-    public get getCodigo(): string {
-        return this.codigo
+        this._codigo = codigo
+        this._modelo = modelo
+        this._tipo = tipo
+        this._capacidade = capacidade
+        this._alcance = alcance
     }
 
-    public get getModelo(): string {
-        return this.modelo
+    public get codigo(): string {
+        return this._codigo
     }
 
-    public get getTipo(): TipoAeronave {
-        return this.tipo
+    public get modelo(): string {
+        return this._modelo
     }
 
-    public get getCapacidade(): number {
-        return this.capacidade
+    public get tipo(): TipoAeronave {
+        return this._tipo
     }
 
-    public get getAlcance(): number {
-        return this.alcance
+    public get capacidade(): number {
+        return this._capacidade
     }
 
-    public detalhes(): void {
-        console.log(`Código: ${this.codigo}\nModelo: ${this.modelo}\nTipo: ${this.tipo}\nCapacidade: ${this.capacidade} pessoas\nAlcance: ${this.alcance} km`)
+    public get alcance(): number {
+        return this._alcance
+    }
+
+    public detalhes(): string {
+        return `Código: ${this._codigo}\nModelo: ${this._modelo}\nTipo: ${this._tipo}\nCapacidade: ${this._capacidade}\nAlcance: ${this._alcance}`
     }
 }
