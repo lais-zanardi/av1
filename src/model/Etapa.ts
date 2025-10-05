@@ -49,18 +49,18 @@ export default class Etapa {
         for (let i = 0; i < this.funcionarios.length; i++) {
             const funcionarioAtual = this.funcionarios[i]
 
-            if (funcionarioAtual.id === funcionario.id) {
+            if (funcionarioAtual.getId === funcionario.getId) {
                 jaAssociado = true
                 break 
             }
         }
 
         if (jaAssociado) {
-            throw new Error(`Funcionário ${funcionario.nome} já está associado a esta etapa.`)
+            throw new Error(`Funcionário ${funcionario.getNome} já está associado a esta etapa.`)
         }
         
         this.funcionarios.push(funcionario);
-        console.log(`Funcionário ${funcionario.nome} associado à etapa.`)
+        console.log(`Funcionário ${funcionario.getNome} associado à etapa.`)
     }
 
     
@@ -68,7 +68,7 @@ export default class Etapa {
         if (this.funcionarios.length === 0) {
             return `Nenhum funcionário designado para a etapa '${this.nome}'.`
         }
-        const lista = this.funcionarios.map(f => `  - ${f.nome} (ID: ${f.id})`).join('\n');
+        const lista = this.funcionarios.map(f => `  - ${f.getNome} (ID: ${f.getId})`).join('\n');
         return `Funcionários na etapa '${this.nome}':\n${lista}`;
     }
 }
