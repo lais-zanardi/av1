@@ -2,6 +2,7 @@ import { TipoAeronave } from '../enum/TipoAeronave'
 import { IPeca } from './IPeca'
 import { IEtapa } from './IEtapa'
 import { ITeste } from './ITeste'
+import Etapa from '../model/Etapa'
 
 export interface IAeronave {
     codigo: string
@@ -10,6 +11,6 @@ export interface IAeronave {
     capacidade: number
     alcance: number
     pecas: IPeca[]
-    etapas: IEtapa[]
+    etapas: Etapa[]
     testes: ITeste[]
 }
