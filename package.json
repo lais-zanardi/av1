@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev":"tsc && node out/main.js"
+    "dev": "tsc && node out/main.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/lais-zanardi/av1/issues"
   },
-  "homepage": "https://github.com/lais-zanardi/av1#readme"
+  "homepage": "https://github.com/lais-zanardi/av1#readme",
+  "devDependencies": {
+    "@types/node": "^24.6.2"
+  }
 }
