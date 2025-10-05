@@ -1,13 +1,13 @@
 import { NivelPermissao } from "../enum/NivelPermissao"
 
 export default class Funcionario {
-    public id: string
-    public nome: string
-    public telefone: string
-    public endereco: string
-    public usuario: string
+    private id: string
+    private nome: string
+    private telefone: string
+    private endereco: string
+    private usuario: string
     private senha: string
-    public nivelPermissao: NivelPermissao
+    private nivelPermissao: NivelPermissao
     
     constructor(id: string, nome: string, telefone: string, endereco: string, usuario: string, senha: string, nivelPermissao: NivelPermissao) {
         this.id = id
@@ -19,7 +19,31 @@ export default class Funcionario {
         this.nivelPermissao = nivelPermissao
     }
 
-    public autenticar(usuario: string, senha: string): boolean {}
-    public salvar(): void {}
-    public carregar(): void {}
+    public get getId(): string {
+        return this.id
+    }
+
+    public get getNome(): string {
+        return this.nome
+    }
+
+    public get getTelefone(): string {
+        return this.telefone
+    }
+
+    public get getEndereco(): string {
+        return this.endereco
+    }
+
+    public get getUsuario(): string {
+        return this.usuario
+    }
+
+    public get getNivelPermissao(): NivelPermissao {
+        return this.nivelPermissao
+    }
+
+    public autenticar(senhaFornecida: string): boolean {
+        return this.senha === senhaFornecida;
+    }
 }
