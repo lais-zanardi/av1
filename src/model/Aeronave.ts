@@ -3,6 +3,7 @@ import { IAeronave } from "../interface/IAeronave"
 import { IEtapa } from "../interface/IEtapa"
 import { IPeca } from "../interface/IPeca"
 import { ITeste } from "../interface/ITeste"
+import Etapa from "./Etapa"
 
 export default class Aeronave implements IAeronave {
     private _codigo: string
@@ -12,7 +13,7 @@ export default class Aeronave implements IAeronave {
     private _alcance: number
 
     public pecas: IPeca[] = []
-    public etapas: IEtapa[] = []
+    public etapas: Etapa[] = []
     public testes: ITeste[] = []
     
     constructor(codigo: string, modelo: string, tipo: TipoAeronave, capacidade: number, alcance:number) {

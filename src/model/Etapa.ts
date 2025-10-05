@@ -4,19 +4,27 @@ import { IFuncionario } from "../interface/IFuncionario"
 import Funcionario from "./Funcionario"
 
 export default class Etapa implements IEtapa {
+    private _id: string
     private _nome: string
     private _prazo: string
     private _status: StatusEtapa
     public _funcionarios: Funcionario[]
     
-    constructor(nome: string, prazo: string, status: StatusEtapa, funcionarios: Funcionario[]) {
+    constructor(id: string, nome: string, prazo: string, status: StatusEtapa, funcionarios: Funcionario[]) {
+        this._id = id
         this._nome = nome
         this._prazo = prazo
         this._funcionarios = funcionarios
         this._status = StatusEtapa.PENDENTE //por default inicializar etapa como PENDENTE
     }
-    id: string
-    funcionarios: IFuncionario[]
+
+    public get id(): string {
+        return this._id
+    }
+
+    public get funcionarios(): Funcionario[] {
+        return this._funcionarios
+    }
 
     public get nome(): string {
         return this._nome
