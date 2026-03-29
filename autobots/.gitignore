@@ -1,0 +1,67 @@
+# ===============================
+# Java / Maven
+# ===============================
+target/
+*.log
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven wrapper
+.mvn/wrapper/maven-wrapper.jar
+
+# ===============================
+# IDEs
+# ===============================
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# ===============================
+# OS
+# ===============================
+.DS_Store
+Thumbs.db
+
+# ===============================
+# Environment / Secrets
+# ===============================
+.env
+application-local.properties
+application-dev.properties
+
+# ===============================
+# Logs
+# ===============================
+logs/
+*.log
+
+# ===============================
+# Build / temp
+# ===============================
+tmp/
+temp/
+
+# ===============================
+# Node (caso tenha front junto)
+# ===============================
+node_modules/
+dist/
+
+# ===============================
+# Coverage / Test
+# ===============================
+coverage/
+jacoco.exec
