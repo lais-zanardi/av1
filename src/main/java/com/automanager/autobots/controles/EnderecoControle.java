@@ -39,13 +39,6 @@ public class EnderecoControle {
         return ResponseEntity.status(HttpStatus.CREATED).body(mapeador.paraResposta(endereco));
     }
 
-    @PostMapping("/muitos")
-    public ResponseEntity<List<EnderecoRespostaDTO>> cadastrarMuitos(@RequestBody @Valid List<EnderecoRequisicaoDTO> dto) {
-        List<Endereco> enderecos = mapeador.paraEntidadeLista(dto);
-        service.salvarTodos(enderecos);
-        return ResponseEntity.status(HttpStatus.CREATED).body(mapeador.paraRespostaLista(enderecos));
-    }
-
     @PatchMapping("/{id}")
     public ResponseEntity<EnderecoRespostaDTO> atualizar(@PathVariable Long id, @RequestBody @Valid EnderecoRequisicaoDTO atualizacao) {
         return ResponseEntity.status(HttpStatus.OK).body(mapeador.paraResposta(service.atualizar(id, atualizacao)));

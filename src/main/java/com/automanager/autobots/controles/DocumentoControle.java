@@ -39,13 +39,6 @@ public class DocumentoControle {
         return ResponseEntity.status(HttpStatus.CREATED).body(mapeador.paraResposta(entidade));
     }
 
-    @PostMapping("/muitos")
-    public ResponseEntity<List<DocumentoRespostaDTO>> cadastrarMuitos(@RequestBody @Valid List<DocumentoRequisicaoDTO> dto) {
-        List<Documento> lista = mapeador.paraEntidadeLista(dto);
-        servico.salvarTodos(lista);
-        return ResponseEntity.status(HttpStatus.CREATED).body(mapeador.paraRespostaLista(lista));
-    }
-
     @PatchMapping("/{id}")
     public ResponseEntity<DocumentoRespostaDTO> atualizar(@PathVariable Long id, @RequestBody @Valid DocumentoRequisicaoDTO atualizacao) {
         return ResponseEntity.status(HttpStatus.OK).body(mapeador.paraResposta(servico.atualizar(id, atualizacao)));

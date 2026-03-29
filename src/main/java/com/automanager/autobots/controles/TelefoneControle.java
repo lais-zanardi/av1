@@ -39,13 +39,6 @@ public class TelefoneControle {
         return ResponseEntity.status(HttpStatus.CREATED).body(mapeador.paraResposta(entidade));
     }
 
-    @PostMapping("/muitos")
-    public ResponseEntity<List<TelefoneRespostaDTO>> cadastrarMuitos(@RequestBody @Valid List<TelefoneRequisicaoDTO> dto) {
-        List<Telefone> lista = mapeador.paraEntidadeLista(dto);
-        servico.salvarTodos(lista);
-        return ResponseEntity.status(HttpStatus.CREATED).body(mapeador.paraRespostaLista(lista));
-    }
-
     @PatchMapping("/{id}")
     public ResponseEntity<TelefoneRespostaDTO> atualizar(@PathVariable Long id, @RequestBody @Valid TelefoneRequisicaoDTO atualizacao) {
         return ResponseEntity.status(HttpStatus.OK).body(mapeador.paraResposta(servico.atualizarPorId(id, atualizacao)));
